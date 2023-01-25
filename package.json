@@ -1,0 +1,27 @@
+{
+  "name": "teamprofilegen",
+  "version": "1.0.0",
+  "description": "Generates and HTML page of Team members based on promted questionnaire. ",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "dist": "dist"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beckamcnally/teamProfileGen.git"
+  },
+  "author": "Becka McNally",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/beckamcnally/teamProfileGen/issues"
+  },
+  "homepage": "https://github.com/beckamcnally/teamProfileGen#readme",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "jest": "^29.4.0"
+  }
+}
