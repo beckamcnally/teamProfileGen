@@ -1,8 +1,27 @@
-// prompted for manager’s name, employee ID, email address, and office number 
+describe('Manager', () => {
+  // test for all use cases when initializing a new Employee object
+  describe('initializeManager', () => {
+    test('should create an object with a office number if provided valid arguments');
 
-// click on email address default email program populates the TO field of the email with the address
+    const manager = new Manager("12");
 
-// click github username and window open to github user
+    expect(manager.officeNumber).toEqual('12');
+  })
 
-// last prompt is option to add an engineer or an intern or to finish building my team
-    // if choose exit the application, and the HTML is generated
+  test('should though an error if not provided any arguments', () => {
+    const cb = () => new Manager();
+    expect(cb).toThrow();
+  });
+
+  test('should through an error if not provided an officeNumber', () => {
+    const cb = () => new Manager('12')
+
+    const err = new Error("Expected parameter is a valid officeNumber");
+    expect(cb).toThrow(err);
+  });
+
+  test("should throw an error if 'officeNumber' is less than 0", () => {
+    const cb = () => new Manager("-1")
+  })
+
+});
