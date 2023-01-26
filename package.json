@@ -1,7 +1,7 @@
 {
-  "name": "teamprofilegen",
+  "name": "teamProfileGen",
   "version": "1.0.0",
-  "description": "Generates and HTML page of Team members based on promted questionnaire. ",
+  "description": "Generates and HTML page of Team members based on prompted questionnaire. ",
   "main": "index.js",
   "directories": {
     "lib": "lib",
@@ -22,7 +22,6 @@
   "homepage": "https://github.com/beckamcnally/teamProfileGen#readme",
   "dependencies": {
     "inquirer": "^8.2.4",
-    "inquirer-loop": "^0.3.0",
     "jest": "^29.4.0"
   }
 }

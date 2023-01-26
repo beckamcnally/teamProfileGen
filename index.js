@@ -1,13 +1,18 @@
 const inquirer = require("inquirer")
 const fs = require('fs');
-const inquirerLoop = require("inquirer-loop");
-// const manager = require('./lib/manager')
-// const employee = require('./lib/employee')
-// const engineer = require('./lib/engineer')
-// const intern = require('./lib/intern')
+// const { doesNotReject } = require("assert");  // where is this coming from??
+
+const Manager = require("./lib/manager")
+// const Employee = require("./lib/employee")
+const Engineer = require('./lib/engineer')
+const Intern = require('./lib/intern')
 let managerArray = [];
 let internArray = [];
 let engineerArray = [];
+
+manQuests() 
+
+function manQuests() {
 inquirer 
   .prompt([
 // there is only one manager
@@ -20,7 +25,7 @@ inquirer
     {
       type: 'input',
       message: 'What is the Managers id number?',
-      name: 'id'
+      name: 'employeeID'
     },
     {
       type: 'input',
@@ -34,51 +39,55 @@ inquirer
       },
   ])
   .then((answers) => {
-    managerArray.push(answers)
+    let name = answers.name
+    console.log(name)
+    let manager = new Manager(name, answers.employeeID, answers.email, answers.officeNumber)
+    
+    managerArray.push(manager)
     console.log(managerArray)
-    nextSet()
+    // nextStep()
   })
+}
 
-  function nextSet(){
-    inquirerLoop
-      .prompt ({
-        type: "loop",
+
+  function nextStep(){
+    inquirer
+      .prompt ([
+        {
         name: "keepGoing",
         message: 'Would you like to add an',
-        choices: ['engineer', 'intern', "I'm all done"],
-        when: () => {
-          if (this.choices === 'engineer'){
-           questions: {
-              type: 'input',
-              message: 'What is the engineers Github user name?',
-              name: 'github'
-            }
-          }
+        choices: ['engineer', 'intern', "I'm all done"]
         }
-          
-      })  
+      ])
+      .then((answers) => {
+        console.log(answers)
+        if(answers.choices === 'engineer'){
+          engQuests()
+        } else if (answers.choices === 'intern') {
+          intQuests()
+        } else if (answers.choices === "I'm all done"){
+          done()
+        }
+
+      }) 
     }
   // {
   //   type: 'input',
   //   message: 'What is the interns school?',
   //   name: 'school'
   // },
-  
-  {
-    type: 'input',
-    message: 'What is the engineers Github user name?',
-    name: 'github'
-  }
+  // makes new instances 
 
+// const intern = new Intern(answers.name, answers.employeeID, answers.email, answers.school)
+// const engineer = new Engineer(answers.name, answers.employeeID, answers.email, answers.github)
+  
   // {
-  //   type: 'list',
-  //   message: 'Would you like to add an',
-  //   choices: ['engineer', 'intern', "I'm all done"],
-  //   name: 'keepgoing'
+  //   type: 'input',
+  //   message: 'What is the engineers Github user name?',
+  //   name: 'github'
   // }
 
 
-// how to caputu
   const generateHTML = () => `
   <!DOCTYPE html>
 <html lang="en">
