@@ -1,52 +1,83 @@
 const inquirer = require("inquirer")
-
+const fs = require('fs');
+const inquirerLoop = require("inquirer-loop");
+// const manager = require('./lib/manager')
+// const employee = require('./lib/employee')
+// const engineer = require('./lib/engineer')
+// const intern = require('./lib/intern')
+let managerArray = [];
+let internArray = [];
+let engineerArray = [];
 inquirer 
   .prompt([
-    // can we change employee to a variable so that depending on what type of employee is added it can say that type???
-
+// there is only one manager
     // there is a loop https://www.npmjs.com/package/inquirer/v/8.2.4 https://www.npmjs.com/package/inquirer-loop
     {
       type: 'input',
-      message: 'What is the employee name?',
+      message: 'What is the Managers name?',
       name: 'name'
     },
     {
       type: 'input',
-      message: 'What is the employee id number?',
+      message: 'What is the Managers id number?',
       name: 'id'
     },
     {
       type: 'input',
-      message: 'What is the employee email address',
+      message: 'What is the Managers email address',
       name: 'email'
     },
-    // only want these questions to show for their job roles
     {
       type: 'input',
-      message: 'What is the interns school?',
-      name: 'school'
-    },
-    {
-      type: 'input',
-      message: 'What is the managers office number?',
+      message: 'What is the Managers office number?',
       name: 'officeNumber'
-    },
-    {
-      type: 'input',
-      message: 'What is the engineers Github user name?',
-      name: 'github'
-    },
-    {
-      type: 'list',
-      message: 'Would you like to add an',
-      choices: ['engineer', 'intern', "I'm all done"],
-      name: 'keepgoing'
-    }
+      },
   ])
   .then((answers) => {
-    console.log(answers)
-    // if answers.keepgoing?? 
+    managerArray.push(answers)
+    console.log(managerArray)
+    nextSet()
   })
+
+  function nextSet(){
+    inquirerLoop
+      .prompt ({
+        type: "loop",
+        name: "keepGoing",
+        message: 'Would you like to add an',
+        choices: ['engineer', 'intern', "I'm all done"],
+        when: () => {
+          if (this.choices === 'engineer'){
+           questions: {
+              type: 'input',
+              message: 'What is the engineers Github user name?',
+              name: 'github'
+            }
+          }
+        }
+          
+      })  
+    }
+  // {
+  //   type: 'input',
+  //   message: 'What is the interns school?',
+  //   name: 'school'
+  // },
+  
+  {
+    type: 'input',
+    message: 'What is the engineers Github user name?',
+    name: 'github'
+  }
+
+  // {
+  //   type: 'list',
+  //   message: 'Would you like to add an',
+  //   choices: ['engineer', 'intern', "I'm all done"],
+  //   name: 'keepgoing'
+  // }
+
+
 // how to caputu
   const generateHTML = () => `
   <!DOCTYPE html>
