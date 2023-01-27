@@ -3,14 +3,15 @@ const generateTeam = team => {
 
   const generateManager = manager => {
     return `
-      <div class="card-header">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header bg-primary">
         ${manager.getRole()}
       </div>
       <ul class="list-group list-group-flush">
-          <li class="list-group-item">Name:${manager.getName()}</li>
-          <li class="list-group-item">Employee Id:${manager.getID()}</li>
-          <li class="list-group-item"><a href="mailto:${manager.getEmail()}">Email:${manager.getEmail()}</a>li>
-          <li class="list-group-item">Office Number:${manager.getOfficeNumber()}</li>
+          <li class="list-group-item">Name: ${manager.getName()}</li>
+          <li class="list-group-item">Employee Id: ${manager.getID()}</li>
+          <li class="list-group-item"><a href="mailto:${manager.getEmail()}">Email: ${manager.getEmail()}</a><li>
+          <li class="list-group-item">Office Number: ${manager.getOfficeNumber()}</li>
       </ul>
     </div>
   `
@@ -18,14 +19,15 @@ const generateTeam = team => {
 
   const generateEngineer = engineer => {
     return `
-      <div class="card-header">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header bg-primary">
       ${engineer.getRole()}
       </div>
       <ul class="list-group list-group-flush">
-          <li class="list-group-item">Name:${engineer.getName()}</li>
-          <li class="list-group-item">Employee Id:${engineer.getID()}</li>
-          <li class="list-group-item"><a href="mailto:${engineer.getEmail()}">Email:${engineer.getEmail()}</a>li>
-          <li class="list-group-item">Github username:<a href=https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+          <li class="list-group-item">Name: ${engineer.getName()}</li>
+          <li class="list-group-item">Employee Id: ${engineer.getID()}</li>
+          <li class="list-group-item"><a href="mailto:${engineer.getEmail()}">Email: ${engineer.getEmail()}</a><li>
+          <li class="list-group-item">Github username:<a href=https://github.com/${engineer.getGithub()}"> ${engineer.getGithub()}</a></li>
       </ul>
     </div>
   `
@@ -33,14 +35,15 @@ const generateTeam = team => {
 
   const generateIntern = intern => {
     return `
-      <div class="card-header">
+    <div class="card" style="width: 18rem;">
+      <div class="card-header bg-primary">
       ${intern.getRole()}
       </div>
       <ul class="list-group list-group-flush">
-          <li class="list-group-item">Name:${intern.getName()}</li>
-          <li class="list-group-item">Employee Id:${intern.getID()}</li>
-          <li class="list-group-item"><a href="mailto:${intern.getEmail()}">Email:${intern.getEmail()}</a>li>
-          <li class="list-group-item">School name:${intern.getSchool()}</li>
+          <li class="list-group-item">Name: ${intern.getName()}</li>
+          <li class="list-group-item">Employee Id: ${intern.getID()}</li>
+          <li class="list-group-item"><a href="mailto:${intern.getEmail()}">Email: ${intern.getEmail()}</a><li>
+          <li class="list-group-item">School name: ${intern.getSchool()}</li>
       </ul>
     </div>
   `
@@ -81,10 +84,10 @@ module.exports = team => {
 </head>
 <body>
   <header class="bg-primary">
-      <h1>My Team</h1>
+      <h1 class="text-center">My Team</h1>
   </header>
   <main>
-    <div class="card" style="width: 18rem;">
+    <div class="d-flex justify-content-center">
       ${generateTeam(team)}
     </div>
   </main>
