@@ -1,27 +1,18 @@
-describe('Manager', () => {
-  // test for all use cases when initializing a new Employee object
-  describe('initializeManager', () => {
-    test('should create an object with a office number if provided valid arguments');
+const Manager = require("../lib/manager")
 
-    const manager = new Manager("12");
 
-    expect(manager.officeNumber).toEqual('12');
-  })
+test('should get role ', () => {
 
-  test('should though an error if not provided any arguments', () => {
-    const cb = () => new Manager();
-    expect(cb).toThrow();
-  });
+  const tempName = "Manager"
+  const manager = new Manager("john", 45, "email@email.com", 10);
 
-  test('should through an error if not provided an officeNumber', () => {
-    const cb = () => new Manager('12')
+  expect(manager.getRole()).toEqual(tempName);
+});
 
-    const err = new Error("Expected parameter is a valid officeNumber");
-    expect(cb).toThrow(err);
-  });
+test('should get office number through office number method', () => {
 
-  test("should throw an error if 'officeNumber' is less than 0", () => {
-    const cb = () => new Manager("-1")
-  })
+  const tempName = 10
+  const manager = new Manager("john", 45, "email@email.com", tempName);
 
+  expect(manager.getOfficeNumber()).toEqual(tempName);
 });

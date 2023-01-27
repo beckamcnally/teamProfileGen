@@ -1,33 +1,52 @@
 # teamProfileGen
 
-to submit add link to video to readme and when submit
-## User Story
+## Technology Used 
 
-```md
-AS A manager
-I WANT to generate a webpage that displays my team's basic info
-SO THAT I have quick access to their emails and GitHub profiles
-```
+| Technology Used         | Resource URL           | 
+| ------------- |:-------------:| 
+| HTML    | [https://developer.mozilla.org/en-US/docs/Web/HTML](https://developer.mozilla.org/en-US/docs/Web/HTML) |
+| | [https://www.w3schools.com/html/html_basic.asp](https://www.w3schools.com/html/html_basic.asp)     | 
+| Git | [https://git-scm.com/](https://git-scm.com/)     | 
+| JavaScript | [https://developer.mozilla.org/en-US/docs/Web/JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)     | 
+| | [https://www.w3schools.com/js/default.asp](https://www.w3schools.com/js/default.asp)     |   
+| | [https://davidwalsh.name/event-delegate](https://davidwalsh.name/event-delegate)     |    
+| Bootstrap    | [https://getbootstrap.com/docs/5.3/getting-started/introduction/](https://getbootstrap.com/docs/5.3/getting-started/introduction/) |
+| Inquirer   | [https://www.npmjs.com/package/inquirer/v/8.2.4 ](https://www.npmjs.com/package/inquirer/v/8.2.4 ) | 
+| Jest   | [https://jestjs.io/docs/api#describename-fn](https://jestjs.io/docs/api#describename-fn) | 
 
-## Acceptance Criteria
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+## Description 
 
-```md
-GIVEN a command-line application that accepts user input
-WHEN I am prompted for my team members and their information
-THEN an HTML file is generated that displays a nicely formatted team roster based on user input
-WHEN I click on an email address in the HTML
-THEN my default email program opens and populates the TO field of the email with the address
-WHEN I click on the GitHub username
-THEN that GitHub profile opens in a new tab
-WHEN I start the application
-THEN I am prompted to enter the team manager’s name, employee ID, email address, and office number
-WHEN I enter the team manager’s name, employee ID, email address, and office number
-THEN I am presented with a menu with the option to add an engineer or an intern or to finish building my team
-WHEN I select the engineer option
-THEN I am prompted to enter the engineer’s name, ID, email, and GitHub username, and I am taken back to the menu
-WHEN I select the intern option
-THEN I am prompted to enter the intern’s name, ID, email, and school, and I am taken back to the menu
-WHEN I decide to finish building my team
-THEN I exit the application, and the HTML is generated
+[See it in action!](#)
 
-Finally, although it’s not a requirement, consider adding validation to ensure that user input is in the proper format.
+
+
+
+## Table of Contents 
+
+* [Usage](#usage)
+* [Learning Points](#learning-points)
+* [Author Info](#author-info)
+* [Credits](#credits)
+* [License](#license)
+
+
+## Usage 
+
+
+## Learning Points 
+
+
+## Author Info
+
+
+### Becka McNally
+
+
+* [Portfolio](https://beckamcnally.github.io/beckamcnally/)
+* [LinkedIn](https://www.linkedin.com/in/becka-mcnally-21520670/)
+* [Github](https://github.com/beckamcnally)
+
+
+## Tests
+

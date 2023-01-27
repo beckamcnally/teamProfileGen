@@ -1,11 +1,5 @@
-// do i need to require anything for these tests?? 
+const Employee = require("../lib/employee")
 
-//https://jestjs.io/docs/api#describename-fn
-
-//testing the whole precesses
-describe('Employee', () => {
-  // test for all use cases when initializing a new Employee object
-  describe('initializeEmployee', () => {
     test('should create an object with a name, id, and email if provided valid arguments', () => {
 
     const employee = new Employee("James", '4984', 'james@james.com');
@@ -14,7 +8,7 @@ describe('Employee', () => {
     expect(employee.id).toEqual('4984');
     expect(employee.email).toEqual('james@james.com');
     });
-  })
+  
 
   test('should though an error if not provided any arguments', () => {
     const cb = () => new Employee();
@@ -50,11 +44,10 @@ describe('Employee', () => {
     });
 
   });
-});
 // need to test these methods 
-getName
-getId  
-getEmail 
-getRole 
+// getName
+// getId  
+// getEmail 
+// getRole 
 
 // so all of these tests go on the other tests as well
