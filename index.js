@@ -75,7 +75,7 @@ inquirer
     {
       type: 'input',
       message: 'What is the Engineers name?',
-      name: 'name'
+      name: 'engineerName'
     },
     {
       type: 'input',
@@ -85,16 +85,16 @@ inquirer
     {
       type: 'input',
       message: 'What is the Engineers email address',
-      name: 'email'
+      name: 'engineerEmail'
     },
     {
       type: 'input',
       message: 'What is the Engineers Github user name?',
-      name: 'github'
+      name: 'engineerGithub'
       },
   ])
   .then((answers) => {
-    const engineer = new Engineer(answers.name, answers.engineerID, answers.email, answers.github)
+    const engineer = new Engineer(answers.engineerName, answers.engineerID, answers.engineerEmail, answers.engineerGithub)
     
     teamArray.push(engineer)
     idArray.push(answers.engineerID)
@@ -108,7 +108,7 @@ inquirer
     {
       type: 'input',
       message: 'What is the Interns name?',
-      name: 'name'
+      name: 'internName'
     },
     {
       type: 'input',
@@ -118,17 +118,17 @@ inquirer
     {
       type: 'input',
       message: 'What is the Interns email address',
-      name: 'email'
+      name: 'internEmail'
     },
     {
       type: 'input',
       message: 'What is the Interns school name?',
-      name: 'school'
+      name: 'internSchool'
       },
   ])
   .then((answers) => {
     
-    const intern = new Intern(answers.name, answers.internID, answers.email, answers.school)
+    const intern = new Intern(answers.internName, answers.internID, answers.internEmail, answers.internSchool)
     
     teamArray.push(intern)
     idArray.push(answers.internID)
@@ -140,6 +140,7 @@ inquirer
  
     
     function done() {
+      console.log("Check your dist folder for your newly generated html document with your team. Thank you for using teamProfileGen")
       // Create the output directory if the dist path doesn't exist
       if (!fs.existsSync(DIST_DIR)) {
         fs.mkdirSync(DIST_DIR);

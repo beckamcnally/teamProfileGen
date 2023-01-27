@@ -1,16 +1,46 @@
+
 const generateTeam = team => {
 
-  const generagteManager = manager => {
+  const generateManager = manager => {
     return `
-  <div class="card" style="width: 18rem;">
       <div class="card-header">
-        Manager
+        ${manager.getRole()}
       </div>
       <ul class="list-group list-group-flush">
           <li class="list-group-item">Name:${manager.getName()}</li>
           <li class="list-group-item">Employee Id:${manager.getID()}</li>
-          <li class="list-group-item"><a href="mailto:">Email:${manager.getEmail()}</a>li>
+          <li class="list-group-item"><a href="mailto:${manager.getEmail()}">Email:${manager.getEmail()}</a>li>
           <li class="list-group-item">Office Number:${manager.getOfficeNumber()}</li>
+      </ul>
+    </div>
+  `
+  }
+
+  const generateEngineer = engineer => {
+    return `
+      <div class="card-header">
+      ${engineer.getRole()}
+      </div>
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item">Name:${engineer.getName()}</li>
+          <li class="list-group-item">Employee Id:${engineer.getID()}</li>
+          <li class="list-group-item"><a href="mailto:${engineer.getEmail()}">Email:${engineer.getEmail()}</a>li>
+          <li class="list-group-item">Github username:<a href=https://github.com/${engineer.getGithub()}">${engineer.getGithub()}</a></li>
+      </ul>
+    </div>
+  `
+  }
+
+  const generateIntern = intern => {
+    return `
+      <div class="card-header">
+      ${intern.getRole()}
+      </div>
+      <ul class="list-group list-group-flush">
+          <li class="list-group-item">Name:${intern.getName()}</li>
+          <li class="list-group-item">Employee Id:${intern.getID()}</li>
+          <li class="list-group-item"><a href="mailto:${intern.getEmail()}">Email:${intern.getEmail()}</a>li>
+          <li class="list-group-item">School name:${intern.getSchool()}</li>
       </ul>
     </div>
   `
@@ -35,9 +65,6 @@ const generateTeam = team => {
 
   return html.join("");
 
-  //how will the html generate a card for each one?? maybe have a function genCards that generates the cards and then stick that inside of the template literal in the card containers. 
-  // 
-
 }
 
 
@@ -57,8 +84,9 @@ module.exports = team => {
       <h1>My Team</h1>
   </header>
   <main>
-    ${generateTeam(team)}
-      </div>
+    <div class="card" style="width: 18rem;">
+      ${generateTeam(team)}
+    </div>
   </main>
 </body>
 </html>`

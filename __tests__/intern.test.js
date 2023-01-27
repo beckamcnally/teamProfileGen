@@ -1,6 +1,12 @@
 const Intern = require('../lib/intern')
 
+test('should create a github account', () => {
 
+  const tempName = "Carle"
+  const intern = new Intern("john", 45, "email@email.com", tempName);
+
+  expect(intern.school).toEqual(tempName);
+});
 
 test('should get role ', () => {
 
