@@ -27,7 +27,7 @@ const generateTeam = team => {
           <li class="list-group-item">Name: ${engineer.getName()}</li>
           <li class="list-group-item">Employee Id: ${engineer.getID()}</li>
           <li class="list-group-item"><a href="mailto:${engineer.getEmail()}">Email: ${engineer.getEmail()}</a><li>
-          <li class="list-group-item">Github username:<a href=https://github.com/${engineer.getGithub()}"> ${engineer.getGithub()}</a></li>
+          <li class="list-group-item">Github username:<a href="https://github.com/${engineer.getGithub()} "> ${engineer.getGithub()}</a></li>
       </ul>
     </div>
   `

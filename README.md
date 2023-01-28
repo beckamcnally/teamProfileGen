@@ -17,8 +17,9 @@
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 ## Description 
 
-[See it in action!](#)
+[See it in action!](https://drive.google.com/file/d/1FXptt2gere1o3DcCha__l_00mV0iWwUy/view)
 
+This program is designed to help you keep track and structure your employees with their information. 
 
 
 
@@ -33,9 +34,13 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
 ## Usage 
 
+When you open the program you will run ```npm install``` to make sure that you have the appropriate modules to run the program. After that is complete you will run the program using ```node index.js```. You will the be presented a series of questions about your employees starting with the manager. Once finished an html file will be generated with all of the employees entered arranged on separate card with their corresponding information.
 
 ## Learning Points 
 
+* NodeJS
+* Jest Testing
+* Modules implementation 
 
 ## Author Info
 
@@ -49,4 +54,6 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
 
 
 ## Tests
+
+Jest test run in the __test__ directory. Run ```npm test``` to see testing results.
 
